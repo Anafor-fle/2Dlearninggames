@@ -1,0 +1,59 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh; /* prend 100% de l'espace disponible */
+    background-color: floralwhite;
+    display: flex;
+}
+
+.memory-game {
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    display: flex; /*défini boite flex*/
+    flex-wrap: wrap; /*ordonne aux élèments de se disposer en plusieurs lignes dans la boxt*/
+    perspective: 1000px; /*créé un effet 3d*/
+
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative; /*ensure cards are positioned relatively to memory-game box*/
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform.5s; /*applique l'effet 3d*/
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face, .back-face {
+    width: 100%; /*make sure cards take full space*/
+    height: 100%;
+    padding: 20px;
+    position: absolute; /*revoir à quoi ça sert*/
+    border: 2px solid  #bf2c2c;    
+    backface-visibility: hidden;
+    border-radius: 15%;
+}
+
+.back-face {
+    background-color: #f2522e;
+}
+
+.front-face {
+    background-color: white ;
+    transform: rotateY(180deg);
+}
