@@ -1,6 +1,7 @@
 const cards = document.querySelectorAll('.memory-card'); //select all cards by their class
-let countTurns = document.querySelector('.turns'); //create a var to count turns
-let countPairs = document.querySelector('.pairs'); //create a var to count pairs
+let countTurns = document.querySelector('.turns'); //create a var to count turns on screen
+let countPairs = document.querySelector('.pairs'); //create a var to count pairs on screen
+let xPairs = 0; //create a number var to count pairs for computer 
 
 let hasFlippedCard = false;
 let lockBoard = false;
@@ -85,9 +86,9 @@ function countUpTurns() {
 //count numbers of pairs found
 function countUpPairs() {
         countPairs.innerHTML++;  
-        if (countPairs === "2") {   //find out why it is not firing the event -seems not to recognize the value
-            displayModal();
-            console.log('you win')
+         xPairs++; // creates a number value in order to work with iterator
+        if (xPairs === 6) {  
+            displayModal();  
         }
 }
 
