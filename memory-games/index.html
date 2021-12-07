@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+  
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+<body onload="shuffle()">
+
+    <section class="title">
+        <div class="title-board">Jeu de Memory - Séance 1 A1
+    
+        </div>
+    </section>
+    <section class="game-board">
+    <section class="memory-game">
+        <div class="memory-card" data-framework="belge">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/belge.png" alt="belge"/>
+        </div>
+        <div class="memory-card" data-framework="belge">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/belge-img.png" alt="belge-image"/>
+        </div>
+        <div class="memory-card" data-framework="femme">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/femme.png" alt="femme"/>
+        </div>
+        <div class="memory-card" data-framework="femme">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/femme-img.png" alt="femme-image"/>
+        </div>
+        <div class="memory-card" data-framework="homme">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/homme.png" alt="homme"/>
+        </div>
+        <div class="memory-card" data-framework="homme">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/homme-img.png" alt="homme-image"/>
+        </div>
+        <div class="memory-card" data-framework="habiter">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/habiter.png" alt="habiter"/>
+        </div>
+        <div class="memory-card" data-framework="habiter"> 
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/habiter-img.png" alt="habiter-image"/>
+        </div>
+        <div class="memory-card" data-framework="marie">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/marie.png" alt="marie"/>
+        </div>
+        <div class="memory-card" data-framework="marie">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/marie-img.png" alt="marie-image"/>
+        </div>
+        <div class="memory-card" data-framework="parler">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/parler.png" alt="parler"/>
+        </div>
+        <div class="memory-card" data-framework="parler">
+            <img class="back-face" src="images/Anafor-logo.svg" alt="Logo"/>
+            <img class="front-face" src="images/parler-img.png" alt="parler-image"/>
+        </div>
+    </section>
+</section>
+   
+<section class="board-flex">
+    <div class="board">
+    <ul class="score-board">
+        <li>Paires : <span class="pairs">0</span></li>
+        <li>Nombre de coups : <span class="turns">0</span></li>
+    </ul>
+        <button onclick="resetGame()" class="button" id="playAgain" type="button">Rejouer</button>
+    </div> 
+</section>
+
+<div class="win-modal">
+    <div class="win-content">
+        <button onclick="closeModal()" class="close" type="button">+</button>
+        <iframe src="https://giphy.com/embed/l0MYBQmSU7N37pOWA" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+        <p><span class="bravo">Bravo !</span> Vous avez réussi. </p>
+        <button onclick="resetGame()" class="button" id="playAgain" type="button">Rejouer</button>
+        <button class="button" id="nextGame" type="button">Jeu suivant</button>
+    </div>
+</div>
+
+
+
+    <script src="scripts.js"></script>
+   
+
+</body>
+
+</html>

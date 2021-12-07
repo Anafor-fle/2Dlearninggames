@@ -1,0 +1,260 @@
+/* CSS SUMMARY
+I - General settings
+II - Title design
+III - Cards board design
+IV - Cards design & animations
+V - Score Board & replay button design
+VI - Buttons design
+VII - Winning pop-up
+VIII - Responsive spec for mobiles
+*/
+
+/* I - General settings */
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%; /* take 100% free space */
+    overflow: hidden;
+    background-color: floralwhite;
+    
+}
+
+
+/* II - Title Design */
+
+.title {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #574c70;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 10px;
+}
+
+
+/* III - Cards board design */
+
+.game-board {
+    display: flex;
+}
+
+.memory-game {
+    width: 640px;
+    height: 478px;
+    margin: auto;
+    display: flex; /*define flex box*/
+    flex-wrap: wrap; /*ensure elements display in lines*/
+    perspective: 1000px; /*create 3d effect*/
+    
+
+}
+
+/* IV - Cards design & animations */
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative; /*ensure cards are positioned relatively to memory-game box*/
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform.5s; /*applies 3d effect*/
+    cursor: pointer;
+}
+
+.memory-card:hover {
+    transform: scale(1.03);    
+}
+
+.memory-card:active {
+    transform: scale(.97);
+    transition: transform .2s;
+}
+
+.memory-card.flip {
+    -webkit-transform: rotateY(180%); 
+
+}
+
+.front-face, .back-face {
+    width: 100%; /*make sure cards take full space*/
+    height: auto; /*make sure they are responsive*/
+    padding: 20px;
+    position: absolute; /*allows the faces to overlap to create 1 card*/
+    border: 2px solid  #bf2c2c;  
+    backface-visibility: hidden;  
+    backface-visibility: hidden;
+    border-radius: 15%;
+}
+
+.back-face {
+    background-color: #f2522e;
+}
+
+.front-face {
+    background-color: white ;
+}
+
+
+/* V - Score Board design*/
+
+.board-flex {
+    display: flex;
+    justify-content: center;
+}
+
+.board { 
+    margin-top: 20px;
+    padding: 10px;
+    width: 30%;
+    text-align: center;
+}
+
+.score-board li{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.25rem;
+    display: inline-flex; /*define flex box*/
+    margin-left: 10px;
+    gap: 3px;
+    
+}
+
+/* VI - Button design*/
+
+.button {
+    background-color: #574c70 ;
+    color: white;
+    font-weight: bold;
+    font-style: monospace ;
+    font-size: 1.3rem;
+    border-radius: 35px;
+    border: none;
+    text-align: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin-top: 10px;
+    
+}
+
+#nextGame {
+    background-color: #f2522e;
+}
+
+.button:hover {
+    background-color: #bf2c2c ;
+}
+
+#nextGame:hover {
+    background-color: #bf2c2c ;
+}
+
+.button:active {
+    background-color: #f86f6f ;
+    transform: scale(0.9);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    right: 8px;
+    transform: rotate(45deg);
+}
+
+.close:active {
+    color: #f86f6f ;
+    transform: scale(0.9);
+    transform: rotate(45deg);
+}
+
+/* VII - Winning modal */
+
+.win-modal {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none; /*hides the modal until the game is won*/
+}
+
+.win-content {
+    width: 550px;
+    height: 450px;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    padding: 30px;
+    position: relative; /* allows the close button to position relatively to it*/
+}
+
+.win-content p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.3rem; 
+    margin-top: 10px;
+}
+
+.win-content .bravo {
+    font-weight: bold;
+    color: green;
+}
+
+.win-content .button {
+    margin-top: 35px;
+    margin-left: 15px;
+}
+
+/* VIII - Responsive spec for mobile */
+
+
+/* mobible phones - Portrait */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 799px) 
+and (orientation: portrait) {
+
+    .title {
+        margin: 30px;
+    }
+
+    .memory-game {
+        width: 950px;
+        height: 900px;
+    }
+
+    .board { 
+        margin-top: 30px;
+        padding: 30px;
+        width: 50%;
+    }
+
+    .playAgain {
+       border-radius: 40px;
+       padding: 20px 40px;
+  
+    }
+
+}
+
+/* mobible phones - Landscape */
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 1024px) 
+and (orientation: landscape) {
+
+    .memory-game {
+        width: 450px;
+        height: 335px;
+
+    }
+
+}
