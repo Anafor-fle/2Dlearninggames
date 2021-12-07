@@ -87,8 +87,10 @@ function countUpTurns() {
 function countUpPairs() {
         countPairs.innerHTML++;  
          xPairs++; // creates a number value in order to work with iterator
-        if (xPairs === 6) {  
-            displayModal();  
+        if (xPairs === 6) {  //if all pairs are found, display the winning modal
+            setTimeout( () => {
+                displayModal();
+            }, 1500)
         }
 }
 
