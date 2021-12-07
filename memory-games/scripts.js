@@ -110,6 +110,7 @@ function closeModal() {
 function resetCount() {
     countPairs.innerHTML = 0;
     countTurns.innerHTML = 0;
+    xPairs = 0;
 
 }
 
