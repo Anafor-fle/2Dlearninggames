@@ -75,6 +75,7 @@ body {
 }
 
 .memory-card.flip {
+     -webkit-transform: rotateY(180%); 
     transform: rotateY(180deg);
 }
 
