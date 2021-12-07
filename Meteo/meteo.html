@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+
+    <meta charset="UTF-8">
+  
+    <link rel="stylesheet" href="stylemeteo.css">
+    <script src="main.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+
+</head>
+
+<header> 
+    <h1> Quel temps fait-il aujourd'hui ?</h1>
+</header>
+
+<body onload="getForecast()">
+
+<main>
+    <form name="gameboard" class="gameboard">
+       <section class="City" id="Montréal">
+        <div class="data">
+            <img id="meteoiconMontreal" src=""/>
+            <p id="temperatureMontreal">?°C</p>
+        </div>
+            <div class="city-name">
+                <p class="Cityname">Aujourd'hui, à Montréal </p>
+            </div>
+            <div class="forecast">
+                <select id="optionMontreal" onchange="getSelectValueMontreal();">
+                    <option id="montrealForecast" value="Snow">il neige.</option>
+                    <option id="montrealForecast" value="Rain" selected>il pleut.</option>
+                    <option id="montrealForecast" value="Clear">il fait beau.</option>
+                    <option id="montrealForecast" value="Clouds">c'est nuageux.</option>
+                    <option id="montrealForecast" value="Thunderstorm">il y a de l'orage.</option>
+                    <option id="montrealForecast" value="Atmosphere">il y a du brouillard.</option>
+                </select>
+            </div>
+        </section>
+        <section class="City" id="Brazzaville">
+            <div class="data">
+                <img id="meteoiconBrazzaville" src=""/>
+                <p id="temperatureBrzzaville">?°C</p>
+            </div>
+            <div class="city-name">
+                <p class="Cityname">Aujourd'hui, à Brazzaville </p>
+            </div>
+            <div class="forecast">
+                <select id="optionBrazzaville" onchange="getSelectValueBrzzaville();">
+                    <option id="answer" name="brazzaForecast" value="Snow">il neige.</option>
+                    <option id="answer" name="brazzaForecast" value="Rain">il pleut.</option>
+                    <option id="answer" name="brazzaForecast" value="Clear">il fait beau.</option>
+                    <option id="answer" name="brazzaForecast" value="Clouds">c'est nuageux.</option>
+                    <option id="answer" name="brazzaForecast" value="Thunderstorm">il y a de l'orage.</option>
+                    <option id="answer" name="brazzaForecast" value="Atmosphere">il y a du brouillard.</option>
+                </select>
+            </div>
+        </section> 
+        <section class="City" id="Bruxelles">
+            <div class="data">
+                <img id="meteoiconBrussels" src=""/>
+                <p id="temperatureBrussels">?°C</p>
+            </div>
+            <div class="city-name">
+                <p class="Cityname">Aujourd'hui, à Bruxelles </p>
+            </div>
+            <div class="forecast">
+                <select id="optionBrussels" onchange="getSelectValueBrussels();">
+                    <option id="answer" name="brusselsForecast" value="Snow">il neige.</option>
+                    <option id="answer" name="brusselsForecast" value="Rain">il pleut.</option>
+                    <option id="answer" name="brusselsForecast" value="Clear">il fait beau.</option>
+                    <option id="answer" name="brusselsForecast" value="Clouds">c'est nuageux.</option>
+                    <option id="answer" name="brusselsForecast" value="Thunderstorm">il y a de l'orage.</option>
+                    <option id="answer" name="brusselsForecast" value="Atmosphere">il y a du brouillard.</option>
+                </select>
+            </div>
+        </section> 
+    </form>
+
+    <article class="révision-modal">
+        <button class="close" type="button">+</button>
+        <table class="table">
+            <tbody>
+              <tr>
+                <td class="nom-meteo">La neige : </td>
+                <td><img class="review-icon" src="images/neige.svg"> </td>
+                <td class="nom-meteo">La pluie : </td>
+                <td><img class="review-icon"  src="images/pluie.svg"> </td>
+              </tr>
+              <tr>
+                <td class="nom-meteo">Le soleil : </td>
+                <td><img class="review-icon"  src="images/soleil.svg"> </td>
+                <td class="nom-meteo">Les nuages : </td>
+                <td><img class="review-icon"  src="images/nuages.svg"> </td>
+              </tr>
+              <tr>
+                <td class="nom-meteo">L'orage : </td>
+                <td><img class="review-icon"  src="images/orage.svg"> </td>
+                <td class="nom-meteo">Le brouillard : </td>
+                <td><img class="review-icon" src="images/brouillard.svg"> </td>
+              </tr>
+            </tbody>
+           </table>
+        </article>
+
+
+    <article class="win-modal">
+        <section class="win-content">
+            <button class="close" type="button">+</button>
+            <iframe src="https://giphy.com/embed/l0MYBQmSU7N37pOWA" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+            <p><span class="bravo">Bravo !</span> Vous avez réussi. </p>
+            <button class="button" id="playAgain">Rejouer</button>
+        </section>
+    </article>
+</main>
+<section class="game-button">
+    <button onclick="displayModal()" class="button">Réviser</button>
+    <button onclick="checkAnswers()"class="button">Valider</button>
+</section>
+
+</body>
