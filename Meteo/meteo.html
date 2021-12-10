@@ -16,17 +16,18 @@
     <h1> Quel temps fait-il aujourd'hui ?</h1>
 </header>
 
-<body onload="getForecast()">
+<body onload="resetGame()">
 
 <main>
     <form name="gameboard" class="gameboard">
-       <section class="City" id="Montréal">
+       <section class="City" id="Montreal">
         <div class="data">
             <img id="meteoiconMontreal" src=""/>
-            <p id="temperatureMontreal">?°C</p>
+            <p class="temperature" id="temperatureMontreal">?°C</p>
         </div>
             <div class="city-name">
                 <p class="Cityname">Aujourd'hui, à Montréal </p>
+                <br />
             </div>
             <div class="forecast">
                 <select id="optionMontreal" onchange="getSelectValueMontreal();">
@@ -42,7 +43,7 @@
         <section class="City" id="Brazzaville">
             <div class="data">
                 <img id="meteoiconBrazzaville" src=""/>
-                <p id="temperatureBrzzaville">?°C</p>
+                <p class="temperature" id="temperatureBrazzaville">?°C</p>
             </div>
             <div class="city-name">
                 <p class="Cityname">Aujourd'hui, à Brazzaville </p>
@@ -58,10 +59,10 @@
                 </select>
             </div>
         </section> 
-        <section class="City" id="Bruxelles">
+        <section class="City" id="Brussels">
             <div class="data">
                 <img id="meteoiconBrussels" src=""/>
-                <p id="temperatureBrussels">?°C</p>
+                <p class="temperature" id="temperatureBrussels">?°C</p>
             </div>
             <div class="city-name">
                 <p class="Cityname">Aujourd'hui, à Bruxelles </p>
@@ -79,39 +80,41 @@
         </section> 
     </form>
 
-    <article class="révision-modal">
-        <button class="close" type="button">+</button>
-        <table class="table">
-            <tbody>
-              <tr>
-                <td class="nom-meteo">La neige : </td>
-                <td><img class="review-icon" src="images/neige.svg"> </td>
-                <td class="nom-meteo">La pluie : </td>
-                <td><img class="review-icon"  src="images/pluie.svg"> </td>
-              </tr>
-              <tr>
-                <td class="nom-meteo">Le soleil : </td>
-                <td><img class="review-icon"  src="images/soleil.svg"> </td>
-                <td class="nom-meteo">Les nuages : </td>
-                <td><img class="review-icon"  src="images/nuages.svg"> </td>
-              </tr>
-              <tr>
-                <td class="nom-meteo">L'orage : </td>
-                <td><img class="review-icon"  src="images/orage.svg"> </td>
-                <td class="nom-meteo">Le brouillard : </td>
-                <td><img class="review-icon" src="images/brouillard.svg"> </td>
-              </tr>
-            </tbody>
+    <article class="review-modal">
+        <section class="review-content">
+            <button class="close" type="button" onclick="closeModal()">+</button>
+            <table class="table">
+                <tbody>
+                <tr>
+                    <td class="nom-meteo">La neige : </td>
+                    <td><img class="review-icon" src="images/neige.svg"> </td>
+                    <td class="nom-meteo">La pluie : </td>
+                    <td><img class="review-icon"  src="images/pluie.svg"> </td>
+                </tr>
+                <tr>
+                    <td class="nom-meteo">Le soleil : </td>
+                    <td><img class="review-icon"  src="images/soleil.svg"> </td>
+                    <td class="nom-meteo">Les nuages : </td>
+                    <td><img class="review-icon"  src="images/nuages.svg"> </td>
+                </tr>
+                <tr>
+                    <td class="nom-meteo">L'orage : </td>
+                    <td><img class="review-icon"  src="images/orage.svg"> </td>
+                    <td class="nom-meteo">Le brouillard : </td>
+                    <td><img class="review-icon" src="images/brouillard.svg"> </td>
+                </tr>
+                </tbody>
            </table>
-        </article>
+        </section>   
+    </article>
 
 
     <article class="win-modal">
         <section class="win-content">
-            <button class="close" type="button">+</button>
+            <button class="close" type="button" onclick="closeModal()">+</button>
             <iframe src="https://giphy.com/embed/l0MYBQmSU7N37pOWA" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
             <p><span class="bravo">Bravo !</span> Vous avez réussi. </p>
-            <button class="button" id="playAgain">Rejouer</button>
+            <button class="button" id="playAgain" onclick="resetGame()">Rejouer</button>
         </section>
     </article>
 </main>
