@@ -25,7 +25,6 @@ p, td, button, option {
     font-family: 'Open Sans', sans-serif;
 }
 
-
 /* II - Gameboard design */
 .gameboard {
     width: 100%;
@@ -39,44 +38,55 @@ p, td, button, option {
 
 .City {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-gap: 30px 60px;
-    padding: 20px;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px 5px;
+    padding: 30px;
     background-color: rgb(255, 254, 254, 0.7);
-    margin-right: 5px;
-    margin-left: 5px;
-    margin-bottom: 20px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
     border-radius: 6%;
     box-shadow: 6px 8px 2px 1px rgba(0, 0, 0, .2)
+    
 }
-   
 
 .data {
     grid-row: 1 / span 1;
     grid-column: 1 / span 2;
-    justify-self: center;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 
+
+.temperature {
+    font-weight: bold;
+    
+}
 
 .city-name {
     grid-row: 2 / span 1;
-    grid-column: 1 / span 1;
-    justify-self: stretch;
+    grid-column: 1 / span 2;
     font-size: 16px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 
 }
 
-.cityName {
+/*.cityName {
     text-align: end;
     margin-right: -45px;
-}
+}*/
 
 
 .forecast {
-    grid-row: 2 / span 1;
-    grid-column: 2 / span 1;
-    justify-self: stretch;
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
 }
 
 /* III - Winning modal */
@@ -122,7 +132,7 @@ p, td, button, option {
 
   /* IV - Révision-modal design */
 
-  .révision-modal {
+ .review-modal {
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
@@ -131,10 +141,12 @@ p, td, button, option {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
     display: none; /*hides the modal until the game is won*/
-  }
 
-  table {
+ }
+
+  .review-content {
       border: gray dotted;
       padding: 15px;
       background-color: white;
@@ -142,12 +154,14 @@ p, td, button, option {
       border-radius: 10px;
       text-align: center;
       padding: 20px;
+      position: relative;
      
   }
 
   .review-icon {
       width: 80px;
       height: 80px;
+      margin-right: 10px;
   }
 
   .nom-meteo {
