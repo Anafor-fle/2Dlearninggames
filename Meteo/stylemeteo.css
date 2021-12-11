@@ -1,0 +1,219 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    height: 100%; /* take 100% free space */
+    background-color: floralwhite;
+    
+}
+
+
+
+h1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    color: #574c70;
+    font-size: 1.6rem;
+    text-align: center;
+    margin: 10px;
+    margin-bottom: 20px;
+}
+
+p, td, button, option {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* II - Gameboard design */
+.gameboard {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+
+.City {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto auto;
+    grid-gap: 20px 5px;
+    padding: 30px;
+    background-color: rgb(255, 254, 254, 0.7);
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-bottom: 25px;
+    border-radius: 6%;
+    box-shadow: 6px 8px 2px 1px rgba(0, 0, 0, .2)
+    
+}
+
+.data {
+    grid-row: 1 / span 1;
+    grid-column: 1 / span 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+
+.temperature {
+    font-weight: bold;
+    
+}
+
+.city-name {
+    grid-row: 2 / span 1;
+    grid-column: 1 / span 2;
+    font-size: 16px;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+
+}
+
+/*.cityName {
+    text-align: end;
+    margin-right: -45px;
+}*/
+
+
+.forecast {
+    grid-row: 3 / span 1;
+    grid-column: 1 / span 2;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+/* III - Winning modal */
+
+.win-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none; /*hides the modal until the game is won*/
+  }
+  
+  .win-content {
+      width: 550px;
+      height: 450px;
+      background-color: white;
+      border-radius: 10px;
+      text-align: center;
+      padding: 30px;
+      position: relative; /* allows the close button to position relatively to it*/
+  }
+  
+  .win-content p {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.3rem; 
+      margin-top: 10px;
+  }
+  
+  .win-content .bravo {
+      font-weight: bold;
+      color: green;
+  }
+  
+  .win-content .button {
+      margin-top: 35px;
+      margin-left: 15px;
+  }
+
+  /* IV - Révision-modal design */
+
+ .review-modal {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    display: none; /*hides the modal until the game is won*/
+
+ }
+
+  .review-content {
+      border: gray dotted;
+      padding: 15px;
+      background-color: white;
+      position: relative; /* allows the close button to position relatively to it*/
+      border-radius: 10px;
+      text-align: center;
+      padding: 20px;
+      position: relative;
+     
+  }
+
+  .review-icon {
+      width: 80px;
+      height: 80px;
+      margin-right: 10px;
+  }
+
+  .nom-meteo {
+      margin-left: 10px;
+  }
+
+  /* V - Buttons */
+
+  .game-button {
+   display: flex;
+   justify-content: center;
+  }
+
+  .button {
+    background-color: #574c70 ;
+    color: white;
+    font-weight: bold;
+    font-style: monospace ;
+    font-size: 1.3rem;
+    border-radius: 35px;
+    border: none;
+    text-align: center;
+    padding: 12px 24px;
+    cursor: pointer;
+    margin: 10px;
+    
+}
+
+.button:hover {
+    background-color: #bf2c2c ;
+}
+
+
+.button:active {
+    background-color: #f86f6f ;
+    transform: scale(0.9);
+}
+
+.close {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    right: 8px;
+    transform: rotate(45deg);
+}
+
+.close:active {
+    color: #f86f6f ;
+    transform: scale(0.9);
+    transform: rotate(45deg);
+}
