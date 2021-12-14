@@ -6,6 +6,7 @@ class Counter extends React.Component {
     render() { 
         return ( 
         <React.Fragment> {/*avoid creating a div that will appear in the final code*/}
+        
             <img  src={this.props.counter.image}/>
             <span className="badge m-2 badge-warning">{this.props.counter.value}</span> 
             <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-secondary btn-sm">+</button> {/* check out how to pass argument*/}

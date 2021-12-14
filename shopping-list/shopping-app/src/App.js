@@ -11,23 +11,23 @@ import Orange from './fruitsimages/orange.svg';
 import Pear from './fruitsimages/pear.svg';
 import Raspberry from './fruitsimages/raspberry.svg';
 import Strawberry from './fruitsimages/strawberry.svg';
+import Salad from './components/recepies/salad';
 
 class App extends Component {
 
   state = {
     counters: [
-        {id: 1, value: 0, image:Apple},
-        {id: 2, value: 0, image:Apricot},
-        {id: 3, value: 0, image:Banana},
-        {id: 4, value: 0, image:Cherry},
-        {id: 5, value: 0, image:Kiwi},
-        {id: 6, value: 0, image:Orange},
-        {id: 7, value: 0, image:Pear},
-        {id: 8, value: 0, image:Raspberry},
-        {id: 9, value: 0, image:Strawberry},
+        {name:'Apple', id: 1, value: 0, image:Apple},
+        {name:'Apricot', id: 2, value: 0, image:Apricot},
+        {name:'Banana', id: 3, value: 0, image:Banana},
+        {name:'Cherry', id: 4, value: 0, image:Cherry},
+        {name:'Kiwi', id: 5, value: 0, image:Kiwi},
+        {name:'Orange', id: 6, value: 0, image:Orange},
+        {name:'Pear', id: 7, value: 0, image:Pear},
+        {name:'Raspberry', id: 8, value: 0, image:Raspberry},
+        {name:'Apple', id: 9, value: 0, image:Strawberry},
     ]
-}
-
+  }
 
   handleIncrement = (counter) => {
     const counters = [...this.state.counters]; {/* cloning counters array to not directly modify*/}
@@ -46,7 +46,7 @@ handleDecrement = (counter) => {
 }
 
 handleDelete = (counterId) => {
-    const counters = this.state.counters.filter(c => c.id !== counterId);
+    const counters = this.state.counters.map(c => {c.value = 0; return c});
     this.setState({counters});
 }
 
@@ -59,7 +59,7 @@ handleReset = () => {
   render()
  { return (
    <React.Fragment>
-     <FruitSalads />
+     <Salad />
       <Counters 
       counters={this.state.counters} 
       onIncrement={this.handleIncrement}

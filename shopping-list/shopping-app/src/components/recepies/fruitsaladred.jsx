@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 class FruitSaladRed extends React.Component {
     render() { 
         return (
-            <React.Fragment>
+        <React.Fragment>
+        <div>        
         <h2>Salade de fruits rouges</h2>
-        <div>
             <ul>
                 <li>seize cerises</li>
                 <li>six grosses fraises</li>
