@@ -13,7 +13,6 @@ class Counters extends Component {
             onDecrement={this.props.onDecrement} 
             onDelete={this.props.onDelete} 
            counter={counter}/>)}
-           <button onClick={this.props.onReset} className="btn btn-outline-danger" >Réinitialiser</button>
         </div>);
     }
 }

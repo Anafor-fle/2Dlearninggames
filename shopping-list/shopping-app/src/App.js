@@ -60,14 +60,14 @@ handleReset = () => {
  { return (
    <React.Fragment>
      <FruitSalads />
-    <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
-    <main className="container">
       <Counters 
       counters={this.state.counters} 
       onIncrement={this.handleIncrement}
       onDecrement={this.handleDecrement} 
       onDelete={this.handleDelete} 
       onReset={this.handleReset} />
+      <NavBar totalCounters={this.state.counters.filter(c => c.value > 0).length}/>
+    <main className="container">
     </main>
     </React.Fragment>
     
