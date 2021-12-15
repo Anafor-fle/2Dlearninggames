@@ -12,7 +12,6 @@ class Salad extends React.Component {
    }
 
    getRandomSalad = (e) => {
-    
     return e[Math.floor(Math.random()* e.length)];
   }
 
